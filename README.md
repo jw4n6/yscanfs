@@ -1,6 +1,6 @@
 # YScanFS
 
-YScanFS mounts forensic disk images, traverses their filesystems, and applies YARA rules to every file — including Volume Shadow Copy (VSS) snapshots.
+YScanFS reads forensic disk images in read-only mode, traverses their filesystems, and applies YARA rules to every file — including Volume Shadow Copy (VSS) snapshots.
 
 ```
 __   __ ____    ____     _     _   _  _____  ____
