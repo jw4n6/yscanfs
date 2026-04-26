@@ -40,11 +40,10 @@ Scanning: evidence.E01
 
 
 
-## ⚠️ Disclaimer: AI-Generated Project
+## Disclaimer
 
-**Important Note:** YScanFS was designed and built through an extended collaboration between the [author](https://github.com/jw4n6)  and [Claude](https://claude.ai), an AI assistant made by [Anthropic](https://www.anthropic.com). The tool was developed iteratively — from initial concept through architecture decisions, feature additions, bug fixes, and code review — with Claude writing the majority of the Rust code and the [author](https://github.com/jw4n6) providing forensic domain expertise, real-world testing on actual disk images, and product direction.
-
-By using this software, you acknowledge that you are responsible for validating its output and for any outcomes that may arise during your analysis.
+YScanFS was developed by Claude, an AI assistant by Anthropic. The development process was iterative — spanning architecture decisions, feature implementation, bug fixes, and code review across many sessions.
+I provided forensic domain expertise, real-world testing on actual disk images, product direction, and all final decisions on what the tool does and how it behaves. Claude assisted with Rust implementation and code review throughout the process.
 
 
 ## Supported Disk Image Formats
