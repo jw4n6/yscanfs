@@ -1,0 +1,6 @@
+/target/
+Cargo.lock
+logs/
+rules/.cache/
+*.csv
+*.json

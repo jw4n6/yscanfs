@@ -1,0 +1,65 @@
+[package]
+name = "yscanfs"
+version = "0.9.0"
+edition = "2021"
+description = "YARA scanner for forensic disk images"
+license = "MIT"
+
+[[bin]]
+name = "yscanfs"
+path = "src/main.rs"
+
+[dependencies]
+csv          = "1.4.0"
+ewf          = "0.1.1"
+yara-x       = "1.14.0"
+
+# CLI
+clap         = { version = "4", features = ["derive"] }
+
+# Progress + display
+indicatif    = "0.17"
+comfy-table  = "7"
+colored      = "2"
+
+# Hashing
+sha2         = "0.10"
+hex          = "0.4"
+
+# Timestamps
+chrono       = "0.4"
+
+# JSON output
+serde        = { version = "1", features = ["derive"] }
+serde_json   = "1"
+
+# Error handling
+anyhow       = "1"
+thiserror    = "1"
+
+# File type detection
+infer        = "0.16"
+
+
+# Logging
+log          = "0.4"
+simplelog    = "0.12"
+
+# HTTP (rules sync) — rustls backend avoids the libssl-dev system dependency
+reqwest      = { version = "0.12", default-features = false, features = ["blocking", "rustls-tls"] }
+
+# ZIP extraction (rules sync)
+zip          = "2"
+
+
+# Directory walking
+walkdir      = "2"
+
+# NTFS filesystem parsing
+ntfs         = "0.4"
+
+# EXT4 filesystem parsing
+ext4-view    = "0.9.3"
+
+# VSS (Volume Shadow Copy) snapshot enumeration
+vshadow      = "0.2"
