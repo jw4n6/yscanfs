@@ -42,12 +42,9 @@ Scanning: evidence.E01
 
 ## ⚠️ Disclaimer: AI-Generated Project
 
-**Important Note:** I am not a professional software developer. YScanFS was designed and built through an extended collaboration between the [author](https://github.com/jw4n6)  and [Claude](https://claude.ai), an AI assistant made by [Anthropic](https://www.anthropic.com). The tool was developed iteratively — from initial concept through architecture decisions, feature additions, bug fixes, and code review — with Claude writing the majority of the Rust code and the [author](https://github.com/jw4n6) providing forensic domain expertise, real-world testing on actual disk images, and product direction.
-
-I am unable to provide technical support or troubleshooting. While I welcome contributions to improve YScanFS, please note that I work full-time and may not be able to respond to issues or review contributions in a timely manner.
+**Important Note:** YScanFS was designed and built through an extended collaboration between the [author](https://github.com/jw4n6)  and [Claude](https://claude.ai), an AI assistant made by [Anthropic](https://www.anthropic.com). The tool was developed iteratively — from initial concept through architecture decisions, feature additions, bug fixes, and code review — with Claude writing the majority of the Rust code and the [author](https://github.com/jw4n6) providing forensic domain expertise, real-world testing on actual disk images, and product direction.
 
 By using this software, you acknowledge that you are responsible for validating its output and for any outcomes that may arise during your analysis.
-
 
 
 ## Supported Disk Image Formats
@@ -146,13 +143,10 @@ To compile for Windows, please refer to the [official rust website](https://rust
 ## Quick Start
 
 ```bash
-# 1. Download YARA Forge full and Elastic Security rules.
-./yscanfs -s --accept-elastic-license
+# 1. Download YARA Forge full and Elastic Security rules and scan a disk image
+./yscanfs -s --accept-elastic-license -f /mnt/labs/disk-images/base-file-cdrive.E01 --vss --unique-files
 
-# 2. Scan a disk image
-./yscanfs -f /mnt/labs/disk-images/base-file-cdrive.E01 --vss --unique-files
-
-# 3. Results written to yscanfs_<timestamp>.csv
+# 2. Results written to yscanfs_<timestamp>.csv
 ```
 
 
@@ -245,7 +239,7 @@ yscanfs -f evidence.E01 -F json -o results.json
 yscanfs -f evidence.E01 --vss --unique-files -F json
 ```
 
-
+## Output
 
 ### CSV columns
 
