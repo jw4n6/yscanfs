@@ -57,7 +57,7 @@ I provided forensic domain expertise, real-world testing on actual disk images, 
 | VHDX | `.vhdx` | Microsoft Virtual Hard Disk v2, fixed and dynamic |
 | VMDK | `.vmdk` | VMware flat VMDKs only (sparse/compressed not supported) |
 
-
+YScanFS currently works best with EWF.
 
 ## Supported Filesystems
 
