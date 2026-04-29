@@ -53,11 +53,6 @@ I provided forensic domain expertise, real-world testing on actual disk images, 
 | EWF | `.E01`–`.E99`, `.EAA`–`.EZZ` | Single and segmented Expert Witness Format |
 | Raw / DD | `.raw`, `.dd`, `.img`, `.bin` | Flat uncompressed images |
 | Split raw | `.001`, `.002`… | Numbered segment images |
-| VHD | `.vhd` | Microsoft Virtual Hard Disk v1, fixed and dynamic |
-| VHDX | `.vhdx` | Microsoft Virtual Hard Disk v2, fixed and dynamic |
-| VMDK | `.vmdk` | VMware flat VMDKs only (sparse/compressed not supported) |
-
-YScanFS currently works best with EWF.
 
 ## Supported Filesystems
 
@@ -70,7 +65,7 @@ YScanFS currently works best with EWF.
 
 ## Features
 
-- **Multi-format image support** — EWF, raw/DD, split raw, VHD, VHDX, flat VMDK
+- **Multi-format image support** — EWF, raw/DD, split raw
 
 - **Multi-filesystem support** — NTFS (including ADS) and EXT4/EXT2/EXT3
 
@@ -112,7 +107,6 @@ YScanFS currently works best with EWF.
 
 - **Debug mode** — verbose logging for troubleshooting rule compatibility issues
 
-  
 
 ## Downloads
 
@@ -204,9 +198,6 @@ yscanfs -s --accept-elastic-license           # YARA Forge full + Elastic
 ```bash
 # Scan a single EWF image
 yscanfs -f evidence.E01
-
-# Scan a VHDX image
-yscanfs -f vm-disk.vhdx
 
 # Scan all images in a case directory (recursive)
 yscanfs -d /cases/2026-001/
@@ -360,12 +351,10 @@ Elastic Security YARA rules are sourced from the [protections-artifacts](https:/
 
 - **Single-threaded I/O** — filesystem traversal is sequential; YARA matching runs in parallel (up to 8 workers)
 
-  
 
 ## License
 
 MIT — see [LICENSE](LICENSE)
-
 
 
 ### Dependency Licenses
