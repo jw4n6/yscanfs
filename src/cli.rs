@@ -30,7 +30,7 @@ __   __ ____    ____     _     _   _  _____  ____
 )]
 pub struct Args {
     // ── Input ──────────────────────────────────────────────────────────────
-    /// Path to a disk image file (.E01, .raw, .dd, .img, .bin, .001, .vhd)
+    /// Path to a disk image file (.E01, .raw, .dd, .img, .bin, .001)
     #[arg(short = 'f', long = "file", value_name = "FILE", conflicts_with = "dir")]
     pub file: Option<PathBuf>,
 

@@ -6,8 +6,6 @@
 //! ```text
 //! yscanfs --sync                              # download YARA Forge full rules
 //! yscanfs -f image.E01                        # scan EWF image
-//! yscanfs -f image.vhdx                       # scan VHDX image
-//! yscanfs -f image.vmdk                       # scan flat VMDK image
 //! yscanfs -d /cases/images/                   # scan all images recursively
 //! yscanfs -f image.E01 --vss                  # scan live + all VSS snapshots
 //! yscanfs -f image.E01 --list-vss             # list VSS snapshots and exit
@@ -640,9 +638,6 @@ fn collect_image_paths(args: &Args) -> anyhow::Result<Vec<PathBuf>> {
             Some(disk::ImageFormat::Ewf)      => " (EWF)",
             Some(disk::ImageFormat::Raw)      => " (raw)",
             Some(disk::ImageFormat::SplitRaw) => " (split raw)",
-            Some(disk::ImageFormat::Vhd)      => " (VHD)",
-            Some(disk::ImageFormat::Vhdx)     => " (VHDX)",
-            Some(disk::ImageFormat::Vmdk)     => " (VMDK flat)",
             None => "",
         };
         println!(
@@ -687,7 +682,7 @@ fn collect_image_paths(args: &Args) -> anyhow::Result<Vec<PathBuf>> {
         if found.is_empty() {
             return Err(anyhow::anyhow!(
                 "no supported disk images found in '{}'. \
-                 Supported: .E01 (EWF), .raw/.dd/.img/.bin (raw), .001 (split raw), .vhd",
+                 Supported: .E01 (EWF), .raw/.dd/.img/.bin (raw), .001 (split raw)",
                 dir.display()
             ));
         }
