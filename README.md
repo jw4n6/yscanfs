@@ -142,10 +142,8 @@ To compile for Windows, please refer to the [official rust website](https://rust
 ## Quick Start
 
 ```bash
-# 1. Download YARA Forge full and Elastic Security rules and scan a disk image
-./yscanfs -s --accept-elastic-license -f /mnt/labs/disk-images/base-file-cdrive.E01 --vss --unique-files
-
-# 2. Results written to yscanfs_<timestamp>.csv
+# 1. Download YARA Forge core, Elastic Security rules and scan a disk image
+./yscanfs -s core --accept-elastic-license -f /mnt/labs/disk-images/DC01.E01 --vss --unique-files -o /mnt/labs/DC01.csv
 ```
 
 
