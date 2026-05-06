@@ -338,18 +338,7 @@ Elastic Security YARA rules are sourced from the [protections-artifacts](https:/
 ## Limitations
 
 - **EXT4 timestamps** — `ext4-view` v0.9.3 does not expose inode timestamps; the `Timestamp` column shows `1970-01-01T00:00:00Z` for EXT4 files
-
-- **VMDK** — flat VMDKs only; sparse/compressed VMDKs require conversion: `vmware-vdiskmanager -r input.vmdk -t 0 flat.vmdk`
-
-- **VSS** — NTFS volumes only; EXT4 has no equivalent mechanism
-
-- **Dynamic disks (LDM)** — Windows dynamic volumes not supported
-
-- **BitLocker** — encrypted volumes cannot be scanned
-
 - **EWF v2 (Ex01)** — not yet supported by the underlying `ewf` crate
-
-- **Single-threaded I/O** — filesystem traversal is sequential; YARA matching runs in parallel (up to 8 workers)
 
 
 ## License
